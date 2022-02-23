@@ -1,5 +1,22 @@
+/*
+
+Development for: André Lumertz Martins;
+Date: 2022-22-02;
+
+*/
+
 const inputElement = document.querySelector(".new-task-input");
 const addTaskButton = document.querySelector(".new-task-button");
+const changeTaskButton = document.querySelector(".new-task-button");
+
+// CHANGE COLOR OF BUTTON
+changeTaskButton.addEventListener("mouseenter", () => {
+  changeTaskButton.style.backgroundColor = '#04b7c4';  
+});
+
+changeTaskButton.addEventListener("mouseout", () => {
+  changeTaskButton.style.backgroundColor = '#2FB1A9';
+});
 
 const tasksContainer = document.querySelector(".tasks-container");
 
@@ -19,19 +36,24 @@ const handleAddTask = () => {
 
   const taskContent = document.createElement("p");
   taskContent.innerText = inputElement.value;
-
+  
+  // riscar o conteudo do input
   taskContent.addEventListener("click", () => handleClick(taskContent));
-
+  
+  // adicionar o icone de deletar
   const deleteItem = document.createElement("i");
   deleteItem.classList.add("far");
   deleteItem.classList.add("fa-trash-alt");
-
+   
+  //adicionar o evento de deletar
   deleteItem.addEventListener("click", () =>
     handleDeleteClick(taskItemContainer, taskContent)
   );
 
+  // adicionar o conteudo do input ao container
   taskItemContainer.appendChild(taskContent);
-  taskItemContainer.appendChild(deleteItem);
+  // adicionar o icone de deletar ao container
+   taskItemContainer.appendChild(deleteItem);
 
   tasksContainer.appendChild(taskItemContainer);
 

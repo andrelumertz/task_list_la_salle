@@ -5,6 +5,16 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+:root {
+  --color-body: #0063BE;
+  --color-secondary: #04b7c4;
+  --color-tertiary: #D84E8E;
+  --color-quaternary: #ffc107;
+  
+  
+}
+
 body {
   height: 100vh;
   background: #0063BE;
@@ -14,15 +24,13 @@ body {
   justify-content: center;
 }
 
-.logo {
+.logo img {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: flex-start;
+  min-width: 200px;
 
 }
-
-
 
 .container {
   border: 2px solid #fff;
